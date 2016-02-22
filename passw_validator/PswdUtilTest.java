@@ -40,6 +40,6 @@ public class PswdUtilTest {
     //проверка на пустое значение
     @Test(expected = NullPointerException.class)
     public void testPasswordsNull(){
-        boolean isCorrect=PswdUtil.validatePassword(null);
+        PswdUtil.validatePassword(null);
     }
 }
