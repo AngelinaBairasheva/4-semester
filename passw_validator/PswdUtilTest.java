@@ -41,6 +41,5 @@ public class PswdUtilTest {
     @Test(expected = NullPointerException.class)
     public void testPasswordsNull(){
         boolean isCorrect=PswdUtil.validatePassword(null);
-        Assert.assertEquals(false, isCorrect);
     }
 }
