@@ -7,37 +7,37 @@ import org.junit.Test;
  * Created by SDS on 19.02.2016.
  */
 public class PswdUtilTest {
-    //проверка на правильность пароля
+    //РїСЂРѕРІРµСЂРєР° РЅР° РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ РїР°СЂРѕР»СЏ
     @Test
     public void testPasswsCorrect(){
         boolean isCorrect= PswdUtil.validatePassword("test1Pasw");
         Assert.assertEquals(true, isCorrect);
     }
-    //проверка на наличия 3 одинаковых символа
+    //РїСЂРѕРІРµСЂРєР° РЅР° РЅР°Р»РёС‡РёСЏ 3 РѕРґРёРЅР°РєРѕРІС‹С… СЃРёРјРІРѕР»Р°
     @Test
     public void testThreeSameSymbols() {
         boolean isCorrect= PswdUtil.validatePassword("test111Pasw");
         Assert.assertEquals(false, isCorrect);
     }
-    //проверка длины пароля
+    //РїСЂРѕРІРµСЂРєР° РґР»РёРЅС‹ РїР°СЂРѕР»СЏ
     @Test
     public void testPasswordsLength(){
         boolean isCorrect=PswdUtil.validatePassword("Test1");
         Assert.assertEquals(false, isCorrect);
     }
-    //проверка на содержимое пароля
+    //РїСЂРѕРІРµСЂРєР° РЅР° СЃРѕРґРµСЂР¶РёРјРѕРµ РїР°СЂРѕР»СЏ
     @Test
     public void testContentPassword(){
         boolean isCorrect=PswdUtil.validatePassword("TestPassword");
         Assert.assertEquals(false, isCorrect);
     }
-    //проверка на остутствие ,!:;
+    //РїСЂРѕРІРµСЂРєР° РЅР° РѕСЃС‚СѓС‚СЃС‚РІРёРµ ,!:;
     @Test
     public void testPasswordsSigns(){
         boolean isCorrect=PswdUtil.validatePassword("Test1,Password");
         Assert.assertEquals(false, isCorrect);
     }
-    //проверка на пустое значение
+    //РїСЂРѕРІРµСЂРєР° РЅР° РїСѓСЃС‚РѕРµ Р·РЅР°С‡РµРЅРёРµ
     @Test(expected = NullPointerException.class)
     public void testPasswordsNull(){
         boolean isCorrect=PswdUtil.validatePassword(null);
